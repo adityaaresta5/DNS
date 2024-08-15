@@ -10,7 +10,7 @@ systemctl status dnsmasq
 cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 
 // edit file dnsmasq
-vi /etc/dnsmasq.conf
+nano /etc/dnsmasq.conf
 
 //tambahkan konfigurasi berikut di paling bawah file
 listen-address=127.0.0.1,192.168.56.10
@@ -40,6 +40,5 @@ nano /etc/hosts
 
 // Restart and enable dnsmasq
 systemctl restart dnsmasq
-systemctl enable dnsmasq
 
 
