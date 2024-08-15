@@ -14,7 +14,7 @@ nano /etc/dnsmasq.conf
 
 //tambahkan konfigurasi berikut di paling bawah file
 listen-address=127.0.0.1,192.168.56.10
-interface=eth0
+interface=enp0s8
 expand-hosts
 domain=domain.com
 # Google's nameservers
