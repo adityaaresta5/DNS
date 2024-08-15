@@ -27,6 +27,9 @@ address=/domain.com/192.168.56.10
 dnsmasq --test
 
 // edit file /etc/resolv.conf
+nano /etc/resolv.conf
+
+// Tamahkan konfigurasi berikut pada file /etc/resolv.conf
 nameserver 127.0.0.1
 
 // modifikasi akses file resolve agar tidak berubah
