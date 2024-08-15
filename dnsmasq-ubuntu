@@ -1,5 +1,5 @@
 // Install Package
-yum install dnsmasq
+apt install dnsmasq
 
 // Start dnsmasq // kalau gagal coba matikan systemd-resolved
 systemctl start dnsmasq
