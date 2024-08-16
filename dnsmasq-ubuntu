@@ -22,6 +22,7 @@ server=8.8.8.8
 server=8.8.4.4
 address=/domain.com/127.0.0.1 
 address=/domain.com/192.168.56.10
+mx-host=domain.com,mail.domain.com,10
 
 // test konfigurasi dnsmasq
 dnsmasq --test
