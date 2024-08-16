@@ -26,6 +26,9 @@ address=/domain.com/192.168.56.10
 // test konfigurasi dnsmasq
 dnsmasq --test
 
+// remove file /etc/resolv.conf
+rm -rf /etc/resolv.conf
+
 // edit file /etc/resolv.conf
 nano /etc/resolv.conf
 
