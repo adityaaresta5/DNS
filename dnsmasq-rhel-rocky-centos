@@ -1,1 +1,51 @@
+// Install Package
+yum install dnsmasq
+
+// Start dnsmasq // kalau gagal coba matikan systemd-resolved
+systemctl start dnsmasq
+systemctl enable dnsmasq
+systemctl status dnsmasq
+
+//Backup dnsmasq
+cp /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+
+// edit file dnsmasq
+nano /etc/dnsmasq.conf
+
+//tambahkan konfigurasi berikut di paling bawah file
+listen-address=127.0.0.1,192.168.56.10
+interface=enp0s8
+expand-hosts
+domain=domain.com
+# Google's nameservers
+server=8.8.8.8
+server=8.8.4.4
+address=/domain.com/127.0.0.1 
+address=/domain.com/192.168.56.10
+mx-host=domain.com,mail.domain.com,10
+
+// test konfigurasi dnsmasq
+dnsmasq --test
+
+// remove file /etc/resolv.conf
+rm -rf /etc/resolv.conf
+
+// edit file /etc/resolv.conf
+nano /etc/resolv.conf
+
+// Tamahkan konfigurasi berikut pada file /etc/resolv.conf
+nameserver 127.0.0.1
+
+// modifikasi akses file resolve agar tidak berubah
+chattr +i /etc/resolv.conf
+
+// edit file /etc/hosts
+nano /etc/hosts
+
+// Tambahkan konfigurasi berikut pada file /etc/hosts
+192.168.56.10 	domain.com
+
+// Restart and enable dnsmasq
+systemctl restart dnsmasq
+
 
