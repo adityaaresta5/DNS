@@ -1,6 +1,11 @@
 // Install Package
 apt install dnsmasq
 
+// disable systemd resolved 
+sudo systemctl stop systemd-resolved
+sudo systemctl disable systemd-resolved
+
+
 // Start dnsmasq // kalau gagal coba matikan systemd-resolved
 systemctl start dnsmasq
 systemctl enable dnsmasq
